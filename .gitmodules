@@ -4,3 +4,6 @@
 [submodule "Anemone3DS"]
 	path = Anemone3DS
 	url = https://github.com/astronautlevel2/Anemone3DS
+[submodule "Checkpoint"]
+	path = Checkpoint
+	url = https://github.com/BernardoGiordano/Checkpoint
