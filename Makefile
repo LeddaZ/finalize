@@ -12,6 +12,8 @@ builds/finalize.romfs: builds
 	@cp Checkpoint/3ds/out/Checkpoint.cia romfs/finalize/Checkpoint.cia
 	@$(MAKE) -C FBI-NH
 	@cp FBI-NH/FBI-NH.cia romfs/finalize/FBI-NH.cia
+	@$(MAKE) -C Homebrew_Launcher
+	@cp Homebrew_Launcher/output/3ds-arm/Homebrew_Launcher.cia romfs/finalize/Homebrew_Launcher.cia
 	@3dstool -c -t romfs --romfs-dir romfs --file $@
 
 builds/x_finalize_helper.firm: builds/finalize.romfs
@@ -25,8 +27,10 @@ clean:
 	@rm -rf romfs/finalize/Anemone3DS.cia
 	@rm -rf romfs/finalize/Checkpoint.cia
 	@rm -rf romfs/finalize/FBI-NH.cia
+	@rm -rf romfs/finalize/Homebrew_Launcher.cia
 	@$(MAKE) -C GodMode9 clean
 	@$(MAKE) -C Anemone3DS clean
 	@$(MAKE) -C Checkpoint clean
 	@$(MAKE) -C FBI-NH clean
+	@$(MAKE) -C Homebrew_Launcher clean
 	@rm GodMode9/data/autorun.gm9

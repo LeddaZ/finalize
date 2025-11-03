@@ -10,3 +10,6 @@
 [submodule "FBI-NH"]
 	path = FBI-NH
 	url = https://github.com/nh-server/FBI-NH
+[submodule "Homebrew_Launcher"]
+	path = Homebrew_Launcher
+	url = https://github.com/PabloMK7/homebrew_launcher_dummy
