@@ -300,9 +300,9 @@ if not install 9:/finalize/Checkpoint.cia
 	poweroff
 end
 
-if not install 9:/finalize/FBI.cia
+if not install 9:/finalize/FBI-NH.cia
 	set PREVIEW_MODE "9:/finalize/img/error14c.png"
-	echo "Error #14c: CIA install fail\n \nA CIA (FBI) failed to install.\n \nAsk for help on Discord: https://discord.gg/MWxPgEp"
+	echo "Error #14c: CIA install fail\n \nA CIA (FBI-NH) failed to install.\n \nAsk for help on Discord: https://discord.gg/MWxPgEp"
 	poweroff
 end
 

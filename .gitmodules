@@ -7,3 +7,6 @@
 [submodule "Checkpoint"]
 	path = Checkpoint
 	url = https://github.com/BernardoGiordano/Checkpoint
+[submodule "FBI-NH"]
+	path = FBI-NH
+	url = https://github.com/nh-server/FBI-NH
