@@ -6,6 +6,8 @@ builds:
 	@[ -d builds ] || mkdir -p builds
 
 builds/finalize.romfs: builds
+	@$(MAKE) -C Anemone3DS
+	@cp Anemone3DS/out/Anemone3DS.cia romfs/finalize/Anemone3DS.cia
 	@3dstool -c -t romfs --romfs-dir romfs --file $@
 
 builds/x_finalize_helper.firm: builds/finalize.romfs
@@ -16,5 +18,7 @@ builds/x_finalize_helper.firm: builds/finalize.romfs
 	@printf '\001' | dd conv=notrunc bs=1 seek=16 of=$@
 clean:
 	@rm -rf builds
+	@rm -rf romfs/finalize/Anemone3DS.cia
 	@$(MAKE) -C GodMode9 clean
+	@$(MAKE) -C Anemone3DS clean
 	@rm GodMode9/data/autorun.gm9

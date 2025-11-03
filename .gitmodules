@@ -1,3 +1,6 @@
 [submodule "GodMode9"]
 	path = GodMode9
 	url = https://github.com/LeddaZ/GodMode9
+[submodule "Anemone3DS"]
+	path = Anemone3DS
+	url = https://github.com/astronautlevel2/Anemone3DS
