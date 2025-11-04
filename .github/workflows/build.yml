@@ -13,13 +13,8 @@ jobs:
     steps:
       - name: Checkout finalize_helper
         uses: actions/checkout@v4
-
-      - name: Checkout GodMode9
-        uses: actions/checkout@v4
         with:
-          repository: d0k3/GodMode9
-          path: GodMode9
-          ref: v2.1.1
+          submodules: recursive
 
       - name: Install packages
         run: |
