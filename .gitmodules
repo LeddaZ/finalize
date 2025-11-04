@@ -13,3 +13,6 @@
 [submodule "Homebrew_Launcher"]
 	path = Homebrew_Launcher
 	url = https://github.com/PabloMK7/homebrew_launcher_dummy
+[submodule "Universal-Updater"]
+	path = Universal-Updater
+	url = https://github.com/Universal-Team/Universal-Updater
