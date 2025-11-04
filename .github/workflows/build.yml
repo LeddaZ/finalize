@@ -19,8 +19,10 @@ jobs:
       - name: Install packages
         run: |
           apt-get update
-          apt-get -y install dirmngr python3 python3-pip p7zip-full libarchive13
-          python3 -m pip install setuptools cryptography git+https://github.com/TuxSH/firmtool.git
+          apt-get -y install dirmngr python3 python3-venv python3-pip p7zip-full libarchive13
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install setuptools cryptography git+https://github.com/TuxSH/firmtool.git
 
       - name: Install 3dstool
         run: |
