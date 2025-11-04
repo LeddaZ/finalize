@@ -24,6 +24,8 @@ jobs:
         run: |
           apt-get update
           apt-get -y install dirmngr python3 python3-venv python3-pip p7zip-full libarchive13
+          dkp-pacman -Syyu --noconfirm
+          dkp-pacman -S --needed --noconfirm 3ds-dev 3ds-jansson 3ds-libvorbisidec 3ds-libpng 3ds-lz4 3ds-libarchive 3ds-curl libctru citro3d citro2d tex3ds 3ds-bzip2 3ds-liblzma switch-dev libnx switch-pkg-config switch-freetype switch-libpng switch-libjpeg-turbo switch-sdl2 switch-sdl2_image switch-sdl2_ttf
           python3 -m venv venv
           source venv/bin/activate
           pip install setuptools cryptography git+https://github.com/TuxSH/firmtool.git
@@ -34,6 +36,19 @@ jobs:
           tar xvzf 3dstool_linux_x86_64.tar.gz
           sudo cp 3dstool ext_key.txt ignore_3dstool.txt /usr/local/bin
           sudo chmod a+x /usr/local/bin/3dstool
+          
+      - name: Install makerom
+        run: |
+          wget https://github.com/3DSGuy/Project_CTR/releases/download/makerom-v0.18.4/makerom-v0.18.4-ubuntu_x86_64.zip
+          unzip makerom-v0.18.4-ubuntu_x86_64.zip
+          sudo cp makerom /usr/local/bin
+          sudo chmod a+x /usr/local/bin/makerom
+          
+      - name: Install bannertool
+        run: |
+          wget https://github.com/LeddaZ/bannertool/releases/download/latest/bannertool
+          sudo cp bannertool /usr/local/bin
+          sudo chmod a+x /usr/local/bin/bannertool
 
       - name: Build Project
         run: |
